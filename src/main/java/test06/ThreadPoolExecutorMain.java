@@ -123,7 +123,7 @@ import java.util.concurrent.*;
  * 4. 如果此时线程池中的线程数量⼤于corePoolSize，缓冲队列workQueue满，并且线程池中的数量等 于maximumPoolSize，那么通过 handler所指定的策略来处理此任务。
  * 5. 当线程池中的线程数量⼤于 corePoolSize时，如果某线程空闲时间超过keepAliveTime，线程将被 终⽌。这样，线程池可以动态的调整池中的线程数
  */
-public class ThreadMain {
+public class ThreadPoolExecutorMain {
     public static void main(String[] args) throws InterruptedException {
 
 

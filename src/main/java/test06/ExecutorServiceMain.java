@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
  * 除了使用ThreadPoolExecutor的构造方法创建线程池外，我们也可以使用Executors提供的工厂方法来创建不同类型的线程池
  * 可通过构造方法具体了解
  */
-public class Thread2Main {
+public class ExecutorServiceMain {
     public static void main(String[] args) throws Exception {
 
         /**
