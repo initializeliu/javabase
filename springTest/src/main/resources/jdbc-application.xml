@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    引入外部文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="user" value="${datasource.mysql.user}"/>
+        <property name="password" value="${datasource.mysql.password}"/>
+        <property name="driverClass" value="${datasource.mysql.driverClass}"/>
+        <property name="jdbcUrl" value="${datasource.mysql.jdbcUrl}"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="datasource"/>
+    </bean>
+
+<!--    配置具名参数的jdbcTemplate-->
+    <bean id="jdbcTemplate2" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="datasource"/>
+    </bean>
+
+
+
+</beans>
