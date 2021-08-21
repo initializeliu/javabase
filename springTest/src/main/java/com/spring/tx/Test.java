@@ -9,9 +9,11 @@ public class Test {
 
         ApplicationContext ac = new ClassPathXmlApplicationContext("tx-application.xml");
 
-        BookService bookService = ac.getBean(BookService.class);
-        bookService.buyBook(1, 2);
+//        BookService bookService = ac.getBean(BookService.class);
+//        bookService.buyBook(1, 2);
 
+        MulService mulService = ac.getBean(MulService.class);
+        mulService.mulTx();
 
     }
 }

@@ -40,4 +40,12 @@ public class BookDao {
         return jdbcTemplate.update(sql, bookId);
     }
 
+    /**
+     * 修改图书的价格
+     */
+    public int updateBookPrice(Integer bookId, Integer price){
+        String sql = "update book set price = ? where bookId = ?";
+        return jdbcTemplate.update(sql, price, bookId);
+    }
+
 }
